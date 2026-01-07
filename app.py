@@ -3,6 +3,15 @@ from audiocraft.models import MusicGen
 import torch
 import torchaudio
 import os
+import subprocess
+import sys
+
+# নিশ্চিত করা যে সব ডিপেন্ডেন্সি ঠিক আছে
+def install_dependencies():
+    try:
+        import audiocraft
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "audiocraft"])
 
 # পেজ সেটআপ এবং ডিজাইন
 st.set_page_config(page_title="AI Melody Maker", page_icon="🎵", layout="centered")
