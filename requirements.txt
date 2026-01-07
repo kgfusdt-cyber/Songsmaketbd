@@ -1,4 +1,4 @@
 streamlit
-audiocraft
 torch
 torchaudio
+audiocraft
