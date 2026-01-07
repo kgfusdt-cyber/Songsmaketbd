@@ -1,5 +1,14 @@
 import streamlit as st
 from audiocraft.models import MusicGen
+
+@st.cache_resource
+def load_model():
+    # 'small' মডেলটি ব্যবহার করুন কারণ এটি সবচেয়ে কম মেমোরি নেয়
+    model = MusicGen.get_pretrained('facebook/musicgen-small')
+    return model
+
+# অ্যাপের বাকি অংশ...
+from audiocraft.models import MusicGen
 import torch
 import torchaudio
 import os
